@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -39,14 +39,13 @@ namespace EmployeeWagesProblem
                     case HALF_DAY:
                         salary = HALF_DAY_HR * WAGES_PER_HR;
                         totalHours += HALF_DAY_HR;
-                        monthlyWage += salary;
                         break;
                     case ABSENT:
                         break;
                 }
                 workinDay--;
             }
-            Console.WriteLine("Employee monthly salary is : " + monthlyWage);
+            Console.WriteLine("Employee monthly salary is : " +monthlyWage);
         }
     }
 }
