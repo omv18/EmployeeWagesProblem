@@ -6,7 +6,9 @@ namespace EmployeeWagesProblem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Employee Wages Problem");
+            EmpWage empWage = new EmpWage();
+            empWage.Attandence();
         }
     }
 }
+
