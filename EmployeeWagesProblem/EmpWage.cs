@@ -9,19 +9,24 @@ namespace EmployeeWagesProblem
 {
     internal class EmpWage
     {
-        int PRESENT = 0;
+        const int PRESENT = 0,WAGES_PER_HR = 20, FULL_DAY = 8;
+        int salary = 0;
         Random random = new Random();
-        public void Attandence()
+        public int Attandence()
         {
             int check = random.Next(0, 2);
+            return check;
+        }
+
+        public void EmpWages()
+        {
+            int check = Attandence();
             if(check == PRESENT)
             {
-                Console.WriteLine("Employee is present");
+                salary = FULL_DAY * WAGES_PER_HR;
             }
-            else
-            {
-                Console.WriteLine("Employee is absent");
-            }
+            Console.WriteLine("Employee salary is : " +salary);
         }
+
     }
 }

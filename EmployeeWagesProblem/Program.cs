@@ -7,8 +7,7 @@ namespace EmployeeWagesProblem
         static void Main(string[] args)
         {
             EmpWage empWage = new EmpWage();
-            empWage.Attandence();
+            empWage.EmpWages();
         }
     }
 }
-
