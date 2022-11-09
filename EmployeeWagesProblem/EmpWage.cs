@@ -29,13 +29,14 @@ namespace EmployeeWagesProblem
             if(check == PRESENT)
             {
                 int day = DayCheck();
-                if(day == FULL_DAY)
+                switch (day)
                 {
-                    salary = FULL_DAY_HR * WAGES_PER_HR;
-                }
-                else if(day == HALF_DAY)
-                {
-                    salary = HALF_DAY_HR * WAGES_PER_HR;
+                    case FULL_DAY:
+                        salary = FULL_DAY_HR * WAGES_PER_HR;
+                        break;
+                    case HALF_DAY:
+                        salary = HALF_DAY_HR * WAGES_PER_HR;
+                        break;
                 }
             }
             Console.WriteLine("Employee salary is : " +salary);
