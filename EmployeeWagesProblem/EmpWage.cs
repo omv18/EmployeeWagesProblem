@@ -9,8 +9,9 @@ namespace EmployeeWagesProblem
 {
     internal class EmpWage
     {
-        const int PRESENT = 0,WAGES_PER_HR = 20, FULL_DAY_HR = 8, HALF_DAY_HR = 4, FULL_DAY = 0, HALF_DAY = 1 ;
-        int salary = 0;
+        const int PRESENT = 0, WAGES_PER_HR = 20, FULL_DAY_HR = 8, HALF_DAY_HR = 4, FULL_DAY = 0, HALF_DAY = 1, ABSENT = 2;
+        int salary = 0, workinDay = 20, monthlyWage = 0,totalHours=0;
+        int sum;
         Random random = new Random();
         public int Attandence()
         {
@@ -19,27 +20,33 @@ namespace EmployeeWagesProblem
         }
         public int DayCheck()
         {
-            int check = random.Next(0, 2);
+            int check = random.Next(0, 3);
             return check;
         }
 
         public void EmpWages()
         {
-            int check = Attandence();
-            if(check == PRESENT)
+            while ((workinDay > 0) && (totalHours <= 100))
             {
                 int day = DayCheck();
                 switch (day)
                 {
                     case FULL_DAY:
                         salary = FULL_DAY_HR * WAGES_PER_HR;
+                        monthlyWage += salary;
+                        totalHours += FULL_DAY_HR;
                         break;
                     case HALF_DAY:
                         salary = HALF_DAY_HR * WAGES_PER_HR;
+                        totalHours += HALF_DAY_HR;
+                        monthlyWage += salary;
+                        break;
+                    case ABSENT:
                         break;
                 }
+                workinDay--;
             }
-            Console.WriteLine("Employee salary is : " +salary);
+            Console.WriteLine("Employee monthly salary is : " + monthlyWage);
         }
     }
 }
