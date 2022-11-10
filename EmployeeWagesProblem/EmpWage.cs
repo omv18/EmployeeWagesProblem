@@ -24,7 +24,7 @@ namespace EmployeeWagesProblem
             return check;
         }
 
-        public void EmpWages()
+        public void EmpWages(string company)
         {
             while ((workinDay > 0) && (totalHours <= 100))
             {
@@ -45,7 +45,7 @@ namespace EmployeeWagesProblem
                 }
                 workinDay--;
             }
-            Console.WriteLine("Employee monthly salary is : " +monthlyWage);
+            Console.WriteLine("Employee {0} is and monthly salary is : " +monthlyWage,company);
         }
     }
 }
